@@ -15,6 +15,191 @@
       rel="stylesheet"
       type="text/css"
     />
+    <style>
+      .featured-slider,
+      .project-slider {
+        overflow: visible;
+      }
+
+      .featured-slider {
+        border: 1px solid #4d4330;
+        border-radius: 28px;
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+        display: block;
+        min-height: clamp(320px, 62vw, 600px);
+        margin-top: 110px;
+      }
+
+      .featured-slider .mask,
+      .project-slider .mask-2 {
+        border-radius: inherit;
+        overflow: hidden;
+      }
+
+      .featured-slider .slide,
+      .featured-slider .slide-2,
+      .project-slider .slide-6,
+      .project-slider .slide-7,
+      .project-slider .slide-8,
+      .project-slider .slide-9 {
+        position: relative;
+      }
+
+      .featured-slider .slide::before,
+      .featured-slider .slide-2::before,
+      .project-slider .slide-6::before,
+      .project-slider .slide-7::before,
+      .project-slider .slide-8::before,
+      .project-slider .slide-9::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(20, 20, 20, 0.08) 0%,
+          rgba(20, 20, 20, 0.3) 100%
+        );
+      }
+
+      .featured-slider .left-arrow,
+      .featured-slider .right-arrow,
+      .project-slider .left-arrow-2,
+      .project-slider .right-arrow-2 {
+        width: 54px;
+        height: 54px;
+        border: 1px solid rgba(211, 188, 134, 0.45);
+        border-radius: 999px;
+        background: rgba(32, 32, 32, 0.78);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        transform: translateY(-50%);
+        transition:
+          background-color 220ms ease,
+          border-color 220ms ease,
+          transform 220ms ease;
+      }
+
+      .featured-slider .left-arrow,
+      .project-slider .left-arrow-2 {
+        left: 20px;
+        margin-left: 0;
+      }
+
+      .featured-slider .right-arrow,
+      .project-slider .right-arrow-2 {
+        right: 20px;
+        margin-right: 0;
+      }
+
+      .featured-slider .left-arrow:hover,
+      .featured-slider .right-arrow:hover,
+      .project-slider .left-arrow-2:hover,
+      .project-slider .right-arrow-2:hover {
+        background: rgba(211, 188, 134, 0.18);
+        border-color: rgba(211, 188, 134, 0.85);
+        transform: translateY(-50%) scale(1.04);
+      }
+
+      .featured-slider .image-6 {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+      }
+
+      .project-slider .w-icon-slider-left,
+      .project-slider .w-icon-slider-right {
+        font-size: 22px;
+      }
+
+      .featured-slider .slide-nav,
+      .project-slider .slide-nav-2 {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        bottom: 18px;
+      }
+
+      .featured-slider .slide-nav .w-slider-dot,
+      .project-slider .slide-nav-2 .w-slider-dot {
+        width: 9px;
+        height: 9px;
+        margin: 0 2px;
+        background: rgba(255, 255, 255, 0.35);
+      }
+
+      .featured-slider .slide-nav .w-slider-dot.w-active,
+      .project-slider .slide-nav-2 .w-slider-dot.w-active {
+        background: #d3bc86;
+        transform: scale(1.15);
+      }
+
+      .project-slider {
+        border: 1px solid #4d4330;
+        border-radius: 24px 24px 0 0;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+        max-width: 100%;
+      }
+
+      .project-slider .mask-2 {
+        min-height: clamp(300px, 48vw, 500px);
+      }
+
+      @media screen and (max-width: 991px) {
+        .featured-slider {
+          margin-top: 80px;
+        }
+
+        .project-slider {
+          width: min(100%, 420px);
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .featured-slider {
+          border-radius: 22px;
+          min-height: 340px;
+        }
+
+        .featured-slider .left-arrow,
+        .featured-slider .right-arrow,
+        .project-slider .left-arrow-2,
+        .project-slider .right-arrow-2 {
+          width: 46px;
+          height: 46px;
+        }
+
+        .featured-slider .left-arrow,
+        .project-slider .left-arrow-2 {
+          left: 12px;
+        }
+
+        .featured-slider .right-arrow,
+        .project-slider .right-arrow-2 {
+          right: 12px;
+        }
+      }
+
+      @media screen and (max-width: 479px) {
+        .featured-slider {
+          min-height: 280px;
+          margin-top: 56px;
+        }
+
+        .featured-slider .slide-nav,
+        .project-slider .slide-nav-2 {
+          bottom: 12px;
+        }
+
+        .project-slider .mask-2 {
+          min-height: 300px;
+        }
+      }
+    </style>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" />
     <script
@@ -49,7 +234,7 @@
     >
       <div class="container nav-continer">
         <a href="index.html" class="brand w-nav-brand"
-          ><div class="text-block-11" style="color: #d3bc86">MöBEL</div></a
+          ><div class="text-block-11">MöBEL</div></a
         >
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div
@@ -447,44 +632,6 @@
           <h1 class="section-heading">ZAVRŠENI PROJEKTI</h1>
           <div class="header-line"></div>
         </div>
-        <div
-          data-delay="4000"
-          data-animation="slide"
-          class="slider w-slider"
-          data-autoplay="true"
-          data-easing="ease"
-          data-hide-arrows="false"
-          data-disable-swipe="false"
-          data-autoplay-limit="0"
-          data-nav-spacing="3"
-          data-duration="500"
-          data-infinite="true"
-        >
-          <div class="mask w-slider-mask">
-            <div class="slide-2 w-slide"></div>
-            <div class="slide w-slide"></div>
-            <div class="slide slide-3 w-slide"></div>
-            <div class="slide slide-4 w-slide"></div>
-            <div class="slide slide-5 w-slide"></div>
-          </div>
-          <div class="left-arrow w-slider-arrow-left">
-            <img
-              src="images/icons8-previous-50.png"
-              loading="lazy"
-              alt=""
-              class="image-6"
-            />
-          </div>
-          <div class="right-arrow w-slider-arrow-right">
-            <img
-              src="images/icons8-next-50.png"
-              loading="lazy"
-              alt=""
-              class="image-6"
-            />
-          </div>
-          <div class="slide-nav w-slider-nav w-round w-num"></div>
-        </div>
         <div class="w-layout-grid grid-7">
           <div
             id="w-node-_4cdb5788-334a-6eaa-a406-656d878775d3-e0c5e0ba"
@@ -493,7 +640,7 @@
             <div
               data-delay="4000"
               data-animation="slide"
-              class="slider-2 w-slider"
+              class="slider-2 project-slider w-slider"
               data-autoplay="true"
               data-easing="ease"
               data-hide-arrows="false"
@@ -514,7 +661,7 @@
               <div class="right-arrow-2 w-slider-arrow-right">
                 <div class="w-icon-slider-right"></div>
               </div>
-              <div class="slide-nav-2 w-slider-nav w-round w-num"></div>
+              <div class="slide-nav-2 w-slider-nav w-round"></div>
             </div>
             <div class="projekti-acreditation">
               <h4 class="heading-3">ZA Projekat Zaslužni:</h4>
@@ -546,7 +693,7 @@
             <div
               data-delay="4000"
               data-animation="slide"
-              class="slider-2 w-slider"
+              class="slider-2 project-slider w-slider"
               data-autoplay="true"
               data-easing="ease"
               data-hide-arrows="false"
@@ -567,7 +714,7 @@
               <div class="right-arrow-2 w-slider-arrow-right">
                 <div class="w-icon-slider-right"></div>
               </div>
-              <div class="slide-nav-2 w-slider-nav w-round w-num"></div>
+              <div class="slide-nav-2 w-slider-nav w-round"></div>
             </div>
             <div class="projekti-acreditation">
               <div class="overlay"></div>
