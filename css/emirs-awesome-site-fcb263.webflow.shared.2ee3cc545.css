@@ -2909,6 +2909,14 @@ textarea.w-select {
   font-size: 18px;
 }
 
+.footer-phone-link,
+.footer-phone-link:visited,
+.footer-phone-link:hover,
+.footer-phone-link:focus {
+  color: #d3bc86;
+  text-decoration: none;
+}
+
 .text-span {
   color: #d3bc86;
 }
